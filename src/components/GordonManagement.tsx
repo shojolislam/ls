@@ -172,22 +172,22 @@ function ClientLogoSet({ keyPrefix }: { keyPrefix: string }) {
 export default function GordonManagement() {
   return (
     <section className="p-2 w-full">
-      <div className="bg-[var(--color-section-bg)] rounded-2xl px-10 py-16 w-full">
+      <div className="rounded-2xl px-4 md:px-10 py-10 md:py-16 w-full">
         {/* Header - center aligned */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center gap-6 mb-16"
+          className="flex flex-col items-center text-center gap-4 md:gap-6 mb-10 md:mb-16"
         >
           <span className="font-mono-main text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
             Investment Advisory
           </span>
-          <h2 className="text-[72px] font-semibold leading-[1.1] tracking-[-1.44px] text-[var(--color-body)]">
+          <h2 className="text-[36px] md:text-[72px] font-semibold leading-[1.1] tracking-[-0.72px] md:tracking-[-1.44px] text-[var(--color-body)]">
             Gordon Management
           </h2>
-          <p className="font-mono-main text-xl font-normal leading-[1.4] tracking-[-0.2px] text-[var(--color-black)] max-w-[680px]">
+          <p className="font-mono-main text-base md:text-xl font-normal leading-[1.4] tracking-[-0.2px] text-[var(--color-black)] max-w-[680px]">
             Through Gordon Management, I advise investors, companies, and
             governments on investments in energy and infrastructure. With over a
             decade of experience across six continents, I bring unique
@@ -196,14 +196,14 @@ export default function GordonManagement() {
           <motion.a
             href="#"
             whileHover={{ x: 4 }}
-            className="font-mono-main text-xl font-semibold tracking-[-0.4px] text-[var(--color-accent)] py-1.5"
+            className="font-mono-main text-lg md:text-xl font-semibold tracking-[-0.4px] text-[var(--color-accent)] py-1.5"
           >
             Learn more →
           </motion.a>
         </motion.div>
 
         {/* Service cards - center aligned */}
-        <div className="flex gap-3 justify-center overflow-x-auto pb-4">
+        <div className="flex gap-3 justify-center overflow-x-auto pb-4 scrollbar-hide">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -215,13 +215,13 @@ export default function GordonManagement() {
                 y: -8,
                 transition: { duration: 0.3, ease: "easeOut" },
               }}
-              className="flex flex-col justify-between bg-white rounded-lg p-7 min-w-[330px] h-[440px] cursor-pointer"
+              className="flex flex-col justify-between bg-white rounded-lg p-6 md:p-7 min-w-[280px] md:min-w-[330px] h-[380px] md:h-[440px] cursor-pointer"
             >
-              <div className="flex flex-col gap-6">
-                <h3 className="text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
+              <div className="flex flex-col gap-4 md:gap-6">
+                <h3 className="text-[22px] md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
                   {service.title}
                 </h3>
-                <p className="font-mono-main text-lg font-normal leading-[1.25] tracking-[-0.18px] text-[var(--color-dark)] max-w-[324px]">
+                <p className="font-mono-main text-base md:text-lg font-normal leading-[1.25] tracking-[-0.18px] text-[var(--color-dark)] max-w-[324px]">
                   {service.description}
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function GordonManagement() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16"
+          className="mt-10 md:mt-16"
         >
           <div className="overflow-hidden">
             <div className="flex animate-scroll" style={{ width: "fit-content" }}>

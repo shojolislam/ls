@@ -15,7 +15,7 @@ export default function Footer() {
     <section className="p-2 w-full">
       <div className="bg-[var(--color-gray-bg)] rounded-xl w-full">
         {/* Top section */}
-        <div className="flex justify-between items-start p-8 border-t border-[var(--color-body)]/0">
+        <div className="flex flex-col md:flex-row justify-between items-start p-6 md:p-8 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function Footer() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
                 whileHover={{ x: 4 }}
-                className="font-mono-main text-xl font-semibold tracking-[-0.4px] text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
+                className="font-mono-main text-lg md:text-xl font-semibold tracking-[-0.4px] text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -44,25 +44,25 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-meritocracy text-[72px] font-normal leading-[1.25] tracking-[-1.44px] text-right text-[var(--color-dark)]"
+            className="font-meritocracy text-[48px] md:text-[72px] font-normal leading-[1.25] tracking-[-0.96px] md:tracking-[-1.44px] text-right text-[var(--color-dark)]"
           >
             Lucy Shaw
           </motion.span>
         </div>
 
         {/* Bottom section */}
-        <div className="flex justify-between items-end p-6 border-t border-[var(--color-body)]/0">
+        <div className="flex justify-between items-end p-4 md:p-6">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-end gap-[189px] justify-between w-full"
+            className="flex flex-col md:flex-row md:items-end gap-4 md:gap-[189px] justify-between w-full"
           >
-            <span className="text-[200px] font-semibold leading-none tracking-[-4px] text-[var(--color-dark)]">
+            <span className="text-[80px] md:text-[200px] font-semibold leading-none tracking-[-2px] md:tracking-[-4px] text-[var(--color-dark)]">
               Lucy Shaw
             </span>
-            <div className="flex items-center gap-2 pb-6">
-              <span className="text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] text-right whitespace-pre-line">
+            <div className="flex items-center gap-2 pb-2 md:pb-6">
+              <span className="text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] md:text-right whitespace-pre-line">
                 {"Entrepreneur,\nAdvisor & Investor"}
               </span>
             </div>

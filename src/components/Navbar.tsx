@@ -13,13 +13,13 @@ export default function Navbar() {
       <span className="text-xl font-bold tracking-[-0.4px] leading-none">
         Lucy Shaw
       </span>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 md:gap-6">
         {["About", "Work", "Contact"].map((item) => (
           <motion.a
             key={item}
             href={`#${item.toLowerCase()}`}
             whileHover={{ y: -2 }}
-            className="font-mono-main text-xl font-medium tracking-[-0.4px] leading-none text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
+            className="font-mono-main text-base md:text-xl font-medium tracking-[-0.4px] leading-none text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
           >
             {item}
           </motion.a>

@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Book() {
   return (
-    <section className="py-40 w-full px-10">
-      <div className="flex flex-col items-center gap-16">
+    <section className="py-20 md:py-40 w-full px-4 md:px-10">
+      <div className="flex flex-col items-center gap-10 md:gap-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,13 +18,13 @@ export default function Book() {
           <span className="font-mono-main text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
             The book
           </span>
-          <h2 className="text-[72px] font-semibold leading-[1.1] tracking-[-1.44px] text-[var(--color-body)] max-w-[836px]">
+          <h2 className="text-[36px] md:text-[72px] font-semibold leading-[1.1] tracking-[-0.72px] md:tracking-[-1.44px] text-[var(--color-body)] max-w-[836px]">
             Slow Burn: how to quit coal
           </h2>
         </motion.div>
 
         {/* Content */}
-        <div className="flex items-center gap-[60px] max-w-[1024px]">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-[60px] max-w-[1024px]">
           {/* Book cover */}
           <motion.img
             src="/images/book-cover.png"
@@ -36,7 +36,7 @@ export default function Book() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             whileHover={{ rotate: -2, scale: 1.02 }}
-            className="w-[423px] h-[601px] object-cover shrink-0"
+            className="w-full max-w-[320px] md:w-[423px] md:max-w-none h-auto md:h-[601px] object-cover shrink-0"
           />
 
           {/* Description */}
@@ -47,7 +47,7 @@ export default function Book() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col justify-end"
           >
-            <p className="font-mono-main text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-black)]">
+            <p className="font-mono-main text-lg md:text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-black)]">
               While some regard coal as a relic of the industrial revolution, it
               has never been more important to powering our modern economy. Coal
               powers 34% of the world&apos;s electricity, more than any other fuel,
@@ -55,13 +55,13 @@ export default function Book() {
               break-neck pace of renewable energy installations, coal remains the
               bedrock of energy systems from Asia to North America to Africa.
             </p>
-            <p className="font-mono-main text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-black)] mt-6">
+            <p className="font-mono-main text-lg md:text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-black)] mt-4 md:mt-6">
               Coal is also controversial because of its climate and health
               impacts. It has the highest climate impact of any fossil fuel,
               producing 37% of annual global emissions, and is one of the most
               harmful energy sources to human health.
             </p>
-            <p className="font-mono-main text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-black)] mt-6">
+            <p className="font-mono-main text-lg md:text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-black)] mt-4 md:mt-6">
               Please get in touch with my agent, Adrian, if you are interested
               in learning more: adrian@krugercowne.com
             </p>
