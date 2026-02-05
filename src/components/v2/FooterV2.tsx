@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const links = [
   { label: "Newsletter", href: "#newsletter" },
@@ -8,6 +9,59 @@ const links = [
   { label: "X.com", href: "#" },
   { label: "Instagram", href: "#" },
 ];
+
+const letterVariants = {
+  hidden: { y: "100%", opacity: 0 },
+  visible: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: i * 0.04,
+    },
+  }),
+};
+
+function AnimatedFooterTitle() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const words = ["Lucy", " ", "Shaw"];
+
+  let charIndex = 0;
+
+  return (
+    <span
+      ref={ref}
+      className="font-plantin text-[80px] sm:text-[140px] md:text-[180px] lg:text-[270px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-5.4px] text-[var(--color-body)] -mb-[0.1em]"
+    >
+      {words.map((word, wi) => {
+        if (word === " ") {
+          return <span key={`space-${wi}`}>&nbsp;</span>;
+        }
+        return (
+          <span key={wi} className="inline-flex overflow-hidden pt-[0.15em] -mt-[0.15em]">
+            {word.split("").map((char) => {
+              const idx = charIndex++;
+              return (
+                <motion.span
+                  key={idx}
+                  custom={idx}
+                  variants={letterVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </span>
+        );
+      })}
+    </span>
+  );
+}
 
 export default function FooterV2() {
   return (
@@ -50,19 +104,18 @@ export default function FooterV2() {
 
       {/* Bottom section: large name + subtitle */}
       <div className="flex flex-col md:flex-row justify-between md:items-end p-4 md:p-6 pt-6 md:pt-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between w-full gap-4"
-        >
-          <span className="font-plantin text-[72px] sm:text-[120px] md:text-[160px] lg:text-[240px] font-normal leading-none tracking-[-2px] md:tracking-[-4.8px] text-[var(--color-body)]">
-            Lucy Shaw
-          </span>
-          <p className="font-plantin text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] md:text-right whitespace-pre-line pb-2 md:pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-4">
+          <AnimatedFooterTitle />
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="font-plantin text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] md:text-right whitespace-pre-line shrink-0"
+          >
             {"Entrepreneur,\nAdvisor & Investor"}
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
       </div>
     </section>
   );

@@ -1,31 +1,68 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const letterVariants = {
+  hidden: { y: "100%", opacity: 0 },
+  visible: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: i * 0.04,
+    },
+  }),
+};
+
+function AnimatedHeroTitle() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
+
+  let charIndex = 0;
+  const words = [
+    { text: "Lucy", gap: true },
+    { text: "Shaw", gap: false },
+  ];
+
+  return (
+    <div ref={ref} className="flex items-center gap-4 md:gap-10 -mb-[0.15em]">
+      {words.map((word, wi) => (
+        <span
+          key={wi}
+          className="font-plantin text-[80px] sm:text-[140px] md:text-[180px] lg:text-[230px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)]"
+        >
+          <span className="inline-flex overflow-hidden pt-[0.15em] -mt-[0.15em]">
+            {word.text.split("").map((char) => {
+              const idx = charIndex++;
+              return (
+                <motion.span
+                  key={idx}
+                  custom={idx}
+                  variants={letterVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </span>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function HeroV2() {
   return (
-    <section className="flex flex-col pt-6 md:pt-10 px-4 md:px-6 pb-4 md:pb-6 w-full">
+    <section className="flex flex-col pt-10 md:pt-14 px-4 md:px-6 pb-4 md:pb-6 w-full">
       {/* Top row: name + subtitle */}
       <div className="flex flex-col md:flex-row md:items-end justify-between w-full mb-4">
-        <div className="flex items-center gap-4 md:gap-10 -mb-[0.15em]">
-          <motion.span
-            initial={{ y: 60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-plantin text-[72px] sm:text-[120px] md:text-[160px] lg:text-[200px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)]"
-          >
-            Lucy
-          </motion.span>
-          <motion.span
-            initial={{ y: 60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-plantin text-[72px] sm:text-[120px] md:text-[160px] lg:text-[200px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)]"
-          >
-            Shaw
-          </motion.span>
-        </div>
+        <AnimatedHeroTitle />
         <motion.p
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}

@@ -18,39 +18,27 @@ export default function NewsletterV2() {
           >
             {/* Title + subtitle at top */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h2 className="font-plantin text-[32px] sm:text-[40px] md:text-[56px] font-normal leading-none tracking-[-0.64px] md:tracking-[-1.12px] text-[var(--color-card-bg)]">
-                Subscribe to Slow Burn
+              <h2 className="font-plantin text-[32px] sm:text-[48px] md:text-[64px] font-normal leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-card-bg)]">
+                Slow Burn newsletter
               </h2>
-              <p className="font-helvetica text-sm md:text-base font-normal leading-[1.5] tracking-[-0.16px] text-[var(--color-card-bg)]/70 max-w-[540px]">
+              <p className="font-helvetica text-base md:text-[18px] font-normal leading-[1.5] tracking-[-0.18px] text-[var(--color-card-bg)]/70 max-w-[540px]">
                 Unpacking the progress and pitfalls of the energy transition -
                 investment, politics, and power in the UK and globally.
               </p>
             </div>
 
-            {/* Form at bottom */}
-            <div className="flex flex-col gap-3 md:gap-4 mt-10 md:mt-16">
-              <div className="flex items-stretch border border-[var(--color-card-bg)] max-w-[560px]">
-                <div className="flex items-center flex-1 px-4 md:px-6 py-3 md:py-4">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full bg-transparent font-helvetica text-sm md:text-base font-normal tracking-[-0.16px] text-[var(--color-card-bg)] placeholder:text-[var(--color-card-bg)]/60 outline-none"
-                  />
-                </div>
-                <motion.button
-                  whileHover={{ opacity: 0.9 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="bg-[var(--color-card-bg)] font-plantin text-base md:text-lg font-normal tracking-[-0.36px] text-[var(--color-body)] px-6 md:px-8 py-3 md:py-4 shrink-0"
-                >
-                  Subscribe
-                </motion.button>
-              </div>
-              <p className="font-helvetica text-xs md:text-sm font-normal leading-[1.4] tracking-[-0.14px] text-[var(--color-card-bg)]/40 max-w-[560px]">
-                By subscribing you agree to{" "}
-                <span className="underline">Substack&apos;s Terms of Use</span>,{" "}
-                <span className="underline">our Privacy Policy</span> and{" "}
-                <span className="underline">our Information collection notice</span>
-              </p>
+            {/* CTA button */}
+            <div className="mt-10 md:mt-16">
+              <motion.a
+                href="https://esgstuff.substack.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ opacity: 0.9 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-block bg-[var(--color-card-bg)] font-plantin text-base md:text-lg font-medium tracking-[-0.36px] text-[var(--color-body)] px-6 md:px-8 py-3 md:py-4"
+              >
+                Read Articles
+              </motion.a>
             </div>
           </motion.div>
 

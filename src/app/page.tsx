@@ -1,27 +1,44 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import LogoBar from "@/components/LogoBar";
-import About from "@/components/About";
-import Writing from "@/components/Writing";
-import GordonManagement from "@/components/GordonManagement";
-import Book from "@/components/Book";
-import Newsletter from "@/components/Newsletter";
-import Footer from "@/components/Footer";
+import NavbarV2 from "@/components/v2/NavbarV2";
+import HeroV2 from "@/components/v2/HeroV2";
+import LogoBarV2 from "@/components/v2/LogoBarV2";
+import AboutV2 from "@/components/v2/AboutV2";
+import WritingV2 from "@/components/v2/WritingV2";
+import GordonManagementV2 from "@/components/v2/GordonManagementV2";
+import ClientsV2 from "@/components/v2/ClientsV2";
+import SpeakingV2 from "@/components/v2/SpeakingV2";
+import BookV2 from "@/components/v2/BookV2";
+import NewsletterV2 from "@/components/v2/NewsletterV2";
+import FooterV2 from "@/components/v2/FooterV2";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <div className="flex flex-col items-center w-full gap-12">
-        <LogoBar />
-        <About />
-        <Writing />
-        <GordonManagement />
-        <Book />
-        <Newsletter />
-        <Footer />
+    <div className="w-full bg-[var(--color-card-bg)] min-h-screen">
+      {/* Full-width sections: Navbar, Hero, LogoBar */}
+      <NavbarV2 />
+      <HeroV2 />
+      <LogoBarV2 />
+
+      {/* Max-width constrained content */}
+      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
+        <AboutV2 />
+        <WritingV2 />
       </div>
-    </main>
+
+      {/* Full-width Gordon Management */}
+      <GordonManagementV2 />
+
+      {/* Full-width Clients carousel */}
+      <ClientsV2 />
+
+      {/* Rest of content */}
+      <main className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
+        <SpeakingV2 />
+        <BookV2 />
+        <NewsletterV2 />
+      </main>
+
+      {/* Full-width Footer */}
+      <FooterV2 />
+    </div>
   );
 }
