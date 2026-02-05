@@ -116,7 +116,7 @@ export default function GordonManagementV2() {
     <section className="w-full px-4 md:px-6">
       <div className="bg-[var(--color-body)] px-4 md:px-6 pt-16 md:pt-28 pb-12 md:pb-24 w-full">
         {/* Heading */}
-        <div className="px-4 md:px-8 text-center">
+        <div className="px-4 md:px-8 text-left md:text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export default function GordonManagementV2() {
         </div>
 
         {/* Service cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 mb-16 mt-10 md:mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-0 mb-16 mt-10 md:mt-16">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -157,14 +157,14 @@ export default function GordonManagementV2() {
         </div>
 
         {/* Learn more link */}
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-start md:justify-center pl-4 md:pl-0">
           <a
             href="https://www.gordonmgmt.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
             className="group/link font-plantin text-[20px] font-medium tracking-[-0.4px] text-[var(--color-card-bg)] transition-colors"
           >
-            <RollText text="Learn more at Gordon Management" />{" "}
+            <RollText text="Learn more" />{" "}
             <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </span>

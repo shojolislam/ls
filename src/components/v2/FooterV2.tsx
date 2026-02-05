@@ -69,13 +69,13 @@ export default function FooterV2() {
   return (
     <section className="w-full px-4 md:px-6">
       {/* Top section: links + name */}
-      <div className="flex justify-between items-start p-4 md:p-6">
+      <div className="flex justify-between items-start px-0 py-4 md:p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-4 md:gap-6"
+          className="flex flex-col gap-2 md:gap-6"
         >
           {links.map((link, i) => (
             <motion.a
@@ -106,7 +106,7 @@ export default function FooterV2() {
       </div>
 
       {/* Bottom section: large name + subtitle */}
-      <div className="flex flex-col md:flex-row justify-between md:items-end p-4 md:p-6 pt-6 md:pt-10">
+      <div className="flex flex-col md:flex-row justify-between md:items-end px-0 py-4 md:p-6 pt-6 md:pt-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-4">
           <AnimatedFooterTitle />
           <motion.p
