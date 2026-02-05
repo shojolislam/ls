@@ -32,7 +32,7 @@ function AnimatedHeroTitle() {
       {words.map((word, wi) => (
         <span
           key={wi}
-          className="font-plantin text-[80px] sm:text-[140px] md:text-[180px] lg:text-[230px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)]"
+          className="font-plantin text-[96px] sm:text-[140px] md:text-[180px] lg:text-[230px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)]"
         >
           <span className="inline-flex overflow-hidden pt-[0.15em] -mt-[0.15em]">
             {word.text.split("").map((char) => {

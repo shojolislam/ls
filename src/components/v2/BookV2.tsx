@@ -17,7 +17,7 @@ export default function BookV2() {
         <span className="font-helvetica text-base md:text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
           The book
         </span>
-        <h2 className="font-plantin text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)] text-center">
+        <h2 className="font-plantin text-[48px] sm:text-[56px] md:text-[64px] lg:text-[80px] font-normal leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)] text-center">
           Slow Burn: how to quit coal
         </h2>
       </motion.div>

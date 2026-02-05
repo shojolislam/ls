@@ -44,16 +44,16 @@ const articles = [
 
 export default function WritingV2() {
   return (
-    <section className="flex flex-col lg:flex-row lg:justify-center pb-24 md:pb-52 px-4 md:px-6 w-full">
+    <section className="flex flex-col xl:flex-row xl:justify-center pb-24 md:pb-52 px-4 md:px-8 w-full overflow-hidden">
       {/* Left heading — sticky on desktop */}
-      <div className="lg:flex-1 pt-8 lg:pt-12 pb-6 lg:pb-[120px]">
-        <div className="lg:sticky lg:top-0 lg:pt-10 lg:pb-10">
+      <div className="xl:flex-1 pt-8 xl:pt-12 pb-10 md:pb-12 xl:pb-[120px]">
+        <div className="xl:sticky xl:top-0 xl:pt-10 xl:pb-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="font-plantin text-[40px] sm:text-[56px] md:text-[68px] lg:text-[80px] font-normal leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)]"
+            className="font-plantin text-[48px] sm:text-[56px] md:text-[64px] xl:text-[80px] font-normal leading-[1.1] tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)]"
           >
             Writing
           </motion.h2>
@@ -61,7 +61,7 @@ export default function WritingV2() {
       </div>
 
       {/* Articles list */}
-      <div className="flex flex-col w-full lg:w-[900px] lg:shrink-0">
+      <div className="flex flex-col w-full xl:w-[900px] xl:shrink-0">
         {articles.map((article, i) => (
           <motion.a
             key={article.title}
@@ -72,7 +72,7 @@ export default function WritingV2() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative flex items-center gap-4 md:gap-10 py-6 md:py-9 cursor-pointer"
+            className="group relative flex items-center gap-4 md:gap-10 py-7 md:py-9 cursor-pointer"
           >
             <div className="flex flex-col gap-2 md:gap-4 flex-1">
               <h3 className="font-plantin text-xl md:text-[28px] font-normal leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">

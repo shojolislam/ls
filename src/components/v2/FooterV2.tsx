@@ -33,7 +33,7 @@ function AnimatedFooterTitle() {
   return (
     <span
       ref={ref}
-      className="font-plantin text-[80px] sm:text-[140px] md:text-[180px] lg:text-[270px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-5.4px] text-[var(--color-body)] -mb-[0.1em]"
+      className="font-plantin text-[96px] sm:text-[140px] md:text-[180px] lg:text-[270px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-5.4px] text-[var(--color-body)] -mb-[0.1em]"
     >
       {words.map((word, wi) => {
         if (word === " ") {
