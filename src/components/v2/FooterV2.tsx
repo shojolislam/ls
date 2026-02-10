@@ -110,7 +110,7 @@ function AnimatedFooterTitle() {
 
 export default function FooterV2() {
   return (
-    <section className="w-full px-4 md:px-6">
+    <section className="w-full p-4">
       {/* Top section: links + name */}
       <div className="flex justify-between items-start px-0 py-4 md:p-6">
         <motion.div

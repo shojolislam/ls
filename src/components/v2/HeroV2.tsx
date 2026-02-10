@@ -59,7 +59,7 @@ function AnimatedHeroTitle() {
 
 export default function HeroV2() {
   return (
-    <section className="relative w-full p-4 overflow-hidden">
+    <section className="relative w-full px-4 pb-4 pt-0 overflow-hidden">
       {/* Hero image — with padding and border radius */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}

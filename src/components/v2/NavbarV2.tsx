@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import RollText from "./RollText";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -15,45 +16,48 @@ const navLinks = [
 
 function NavLink({
   item,
-  className,
   onClick,
 }: {
-  item: { label: string; href: string; external?: boolean };
-  className: string;
+  item: { label: string; href: string };
   onClick?: () => void;
 }) {
-  if (item.external) {
-    return (
-      <a
-        href={item.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-        onClick={onClick}
-      >
-        {item.label}
-      </a>
-    );
-  }
+  const className =
+    "group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors";
+
+  const content = (
+    <>
+      <RollText text={item.label} />{" "}
+      <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle">
+          <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </span>
+    </>
+  );
+
   if (item.href.startsWith("#")) {
     return (
       <a href={item.href} className={className} onClick={onClick}>
-        {item.label}
+        {content}
+      </a>
+    );
+  }
+  if (item.href.startsWith("mailto:")) {
+    return (
+      <a href={item.href} className={className} onClick={onClick}>
+        {content}
       </a>
     );
   }
   return (
     <Link href={item.href} className={className} onClick={onClick}>
-      {item.label}
+      {content}
     </Link>
   );
 }
 
 export default function NavbarV2() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const linkClass =
-    "font-sans-main text-base font-normal leading-none tracking-[-0.32px] text-[var(--color-dark)] hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all";
 
   return (
     <motion.nav
@@ -72,7 +76,7 @@ export default function NavbarV2() {
       {/* Desktop nav */}
       <div className="hidden md:flex items-center gap-6">
         {navLinks.map((item) => (
-          <NavLink key={item.label} item={item} className={linkClass} />
+          <NavLink key={item.label} item={item} />
         ))}
       </div>
 
@@ -109,7 +113,6 @@ export default function NavbarV2() {
                 <NavLink
                   key={item.label}
                   item={item}
-                  className="font-sans-main text-base font-normal tracking-[-0.32px] text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
                   onClick={() => setMenuOpen(false)}
                 />
               ))}
