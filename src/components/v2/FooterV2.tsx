@@ -9,9 +9,8 @@ const links = [
     label: "Newsletter",
     href: "https://esgstuff.substack.com",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block align-middle mr-2">
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="M22 7L13.03 12.7a1.94 1.94 0 01-2.06 0L2 7" />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="inline-block align-middle mr-2">
+        <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
       </svg>
     ),
   },

@@ -83,7 +83,7 @@ export default function WritingV2() {
                 {article.publication} · {article.date}
               </span>
             </div>
-            <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden">
+            <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
               <Image
                 src={article.image}
                 alt={article.title}

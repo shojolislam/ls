@@ -90,7 +90,7 @@ export default function TalksPage() {
               transition={{ duration: 0.5, delay: i * 0.03 }}
               className="group relative flex items-center gap-4 md:gap-10 py-6 md:py-9 cursor-pointer"
             >
-              <div className="w-32 h-24 md:w-64 md:h-40 shrink-0 relative overflow-hidden">
+              <div className="w-32 h-24 md:w-64 md:h-40 shrink-0 relative overflow-hidden rounded-lg">
                 <Image
                   src={event.image}
                   alt={event.title}

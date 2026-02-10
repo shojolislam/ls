@@ -60,7 +60,7 @@ export default function NavbarV2() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative flex items-center justify-between px-4 pt-4 pb-4 md:px-5 md:pt-5 md:pb-4 w-full border-b border-[var(--color-body)]"
+      className="relative flex items-center justify-between px-4 pt-4 pb-4 md:px-5 md:pt-5 md:pb-4 w-full"
     >
       <Link
         href="/"
@@ -102,7 +102,7 @@ export default function NavbarV2() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="absolute top-full left-0 right-0 bg-[var(--color-card-bg)] border-b border-[var(--color-body)] z-50 overflow-hidden"
+            className="absolute top-full left-0 right-0 bg-[var(--color-card-bg)] z-50 overflow-hidden"
           >
             <div className="flex flex-col px-4 py-4 gap-4">
               {navLinks.map((item) => (

@@ -24,7 +24,7 @@ export default function AboutV2() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative w-full md:w-[560px] h-[400px] sm:h-[500px] md:h-[747px] shrink-0 overflow-hidden"
+          className="relative w-full md:w-[560px] h-[400px] sm:h-[500px] md:h-[747px] shrink-0 overflow-hidden rounded-2xl"
         >
           <Image
             src="/images/about-v2.jpg"
@@ -38,7 +38,7 @@ export default function AboutV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="font-sans-main text-lg md:text-xl font-normal leading-[1.4] tracking-[-0.24px] text-[var(--color-text-primary)] whitespace-pre-line"
+          className="font-sans-main text-lg md:text-[22px] font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)] whitespace-pre-line"
         >
           {`Lucy Shaw leads Gordon Management, an investment advisory firm focused on energy transition in the UK and Africa. She advises institutional investors, energy companies, and governments on clean energy investments, infrastructure strategy, and economic development.
 

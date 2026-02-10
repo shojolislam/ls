@@ -46,7 +46,7 @@ export default function BookV2() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col justify-end"
           >
-            <p className="font-sans-main text-lg md:text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)]">
+            <p className="font-sans-main text-lg md:text-[22px] font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)]">
               While some regard coal as a relic of the industrial revolution, it
               has never been more important to powering our modern economy. Coal
               powers 34% of the world&apos;s electricity, more than any other fuel,
@@ -54,13 +54,13 @@ export default function BookV2() {
               break-neck pace of renewable energy installations, coal remains the
               bedrock of energy systems from Asia to North America to Africa.
             </p>
-            <p className="font-sans-main text-lg md:text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)] mt-4 md:mt-6">
+            <p className="font-sans-main text-lg md:text-[22px] font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)] mt-4 md:mt-6">
               Coal is also controversial because of its climate and health
               impacts. It has the highest climate impact of any fossil fuel,
               producing 37% of annual global emissions, and is one of the most
               harmful energy sources to human health.
             </p>
-            <p className="font-sans-main text-lg md:text-2xl font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)] mt-4 md:mt-6">
+            <p className="font-sans-main text-lg md:text-[22px] font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)] mt-4 md:mt-6">
               Please get in touch with my agent, Adrian, if you are interested
               in learning more:{" "}
               <a href="mailto:adrian@krugercowne.com" className="underline">adrian@krugercowne.com</a>
