@@ -3,12 +3,10 @@
 import Image from "next/image";
 
 const clients = [
-  { name: "Client 1", src: "/logos/client-1.svg" },
-  { name: "Octopus Energy Generation", src: "/images/logos/octopus.png" },
-  { name: "Denham", src: "/images/logos/denham.png" },
-  { name: "Client 4", src: "/logos/client-4.svg" },
-  { name: "CrossBoundary", src: "/logos/crossboundary-client.svg" },
-  { name: "SALT", src: "/logos/salt.svg" },
+  { name: "Octopus Energy Generation", src: "/logos/oe-generation.svg", className: "" },
+  { name: "Denham Capital", src: "/logos/denham-capital.svg", className: "!h-7 md:!h-11" },
+  { name: "CrossBoundary", src: "/logos/crossboundary-dark.svg", className: "" },
+  { name: "SALT", src: "/logos/salt-logo.png", className: "!h-7 md:!h-11" },
 ];
 
 export default function ClientsV2() {
@@ -25,7 +23,7 @@ export default function ClientsV2() {
               alt={client.name}
               width={148}
               height={64}
-              className="h-10 md:h-16 w-auto object-contain opacity-70"
+              className={`h-10 md:h-16 w-auto object-contain opacity-70 brightness-0 ${client.className}`}
             />
           </div>
         ))}
@@ -39,7 +37,7 @@ export default function ClientsV2() {
               alt={client.name}
               width={148}
               height={64}
-              className="h-10 md:h-16 w-auto object-contain opacity-70"
+              className={`h-10 md:h-16 w-auto object-contain opacity-70 brightness-0 ${client.className}`}
             />
           </div>
         ))}

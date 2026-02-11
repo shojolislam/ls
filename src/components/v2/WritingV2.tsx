@@ -9,14 +9,14 @@ const articles = [
   {
     title: "Labour must offer pride, not just employment, to former coal communities",
     publication: "LabourList",
-    date: "29 October 2025",
+    date: "November 2025",
     image: "/images/writing-2.png",
     href: "https://labourlist.org/2025/11/coal-culture-green-jobs/",
   },
   {
     title: "Cut to the quick - the government must invest more in short-term solutions to our energy crisis",
     publication: "The Fabian Society",
-    date: "29 October 2025",
+    date: "6 November 2025",
     image: "/images/writing-3.png",
     href: "https://fabians.org.uk/cut-to-the-quick/",
   },
@@ -30,14 +30,14 @@ const articles = [
   {
     title: "Let Solar Shine",
     publication: "The Economist",
-    date: "29 October 2025",
+    date: "4 July 2024",
     image: "/images/writing-5.png",
     href: "https://www.economist.com/letters/2024/07/04/letters-to-the-editor",
   },
   {
     title: "The Economist Letters: A Strict Immigration Policy",
     publication: "The Economist",
-    date: "29 October 2025",
+    date: "7 May 2022",
     image: "/images/writing-6.png",
     href: "https://www.economist.com/letters/2022/05/07/letters-to-the-editor",
   },
@@ -73,14 +73,17 @@ export default function WritingV2() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative flex items-center gap-4 md:gap-10 py-7 md:py-9 cursor-pointer"
+            className="group relative flex items-center gap-4 md:gap-10 py-6 px-4 md:px-6 -mx-4 md:-mx-6 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"
           >
-            <div className="flex flex-col gap-2 md:gap-4 flex-1">
+            <div className="flex flex-col gap-3 md:gap-4 flex-1">
+              <span className="font-sans-main text-base md:text-lg font-semibold tracking-[-0.36px] leading-none text-[var(--color-body)]">
+                {article.publication}
+              </span>
               <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
                 {article.title}
               </h3>
-              <span className="font-sans-main text-sm md:text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]/50">
-                {article.publication} · {article.date}
+              <span className="font-sans-main text-sm md:text-base font-normal tracking-[-0.32px] leading-none text-[var(--color-dark)]/60">
+                {article.date}
               </span>
             </div>
             <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">

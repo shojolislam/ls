@@ -118,7 +118,7 @@ export default function FooterV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-2 md:gap-6"
+          className="flex flex-col gap-4 md:gap-6"
         >
           {links.map((link, i) => (
             <motion.a
@@ -130,7 +130,7 @@ export default function FooterV2() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center"
+              className="group/link font-sans-main text-[16px] md:text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center"
             >
               {link.icon}
               <RollText text={link.label} />{" "}<span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>

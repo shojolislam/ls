@@ -3,17 +3,17 @@
 import Image from "next/image";
 
 const logos = [
-  { name: "Blackstone", src: "/logos/work-1.svg" },
-  { name: "IFC", src: "/logos/edu-2.svg" },
-  { name: "Actis", src: "/images/logos/actis.png" },
-  { name: "Harvard Business School", src: "/logos/edu-1.svg" },
-  { name: "BCG", src: "/logos/edu-3.svg" },
-  { name: "Harvard Kennedy School", src: "/logos/hks.svg" },
-  { name: "CrossBoundary", src: "/logos/crossboundary.svg" },
-  { name: "Agricultural Transformation Agency", src: "/logos/ata.svg" },
-  { name: "UN WFP", src: "/logos/unwfp.svg" },
-  { name: "Vena Energy", src: "/logos/vena-energy.svg" },
-  { name: "Harvard Center for International Development", src: "/logos/harvard-cid.svg" },
+  { name: "Blackstone", src: "/logos/blackstone.svg", className: "" },
+  { name: "IFC", src: "/logos/ifc.svg", className: "!h-7 md:!h-11" },
+  { name: "Actis", src: "/images/logos/actis.png", className: "" },
+  { name: "Harvard Business School", src: "/logos/edu-1.svg", className: "" },
+  { name: "BCG", src: "/logos/bcg.svg", className: "!h-7 md:!h-11" },
+  { name: "Harvard Kennedy School", src: "/logos/hks-logo.svg", className: "!h-7 md:!h-11" },
+  { name: "CrossBoundary", src: "/logos/crossboundary-logo.svg", className: "" },
+  { name: "Agricultural Transformation Agency", src: "/logos/ata-logo.png", className: "" },
+  { name: "UN WFP", src: "/logos/unwfp-logo.svg", className: "" },
+  { name: "Vena Energy", src: "/logos/vena-group.png", className: "" },
+  { name: "Harvard Center for International Development", src: "/logos/harvard-cid-logo.svg", className: "" },
 ];
 
 export default function LogoBarV2() {
@@ -30,7 +30,7 @@ export default function LogoBarV2() {
               alt={logo.name}
               width={148}
               height={64}
-              className="h-10 md:h-16 w-auto object-contain opacity-100"
+              className={`h-10 md:h-16 w-auto object-contain opacity-100 ${logo.className}`}
             />
           </div>
         ))}
@@ -44,7 +44,7 @@ export default function LogoBarV2() {
               alt={logo.name}
               width={148}
               height={64}
-              className="h-10 md:h-16 w-auto object-contain opacity-100"
+              className={`h-10 md:h-16 w-auto object-contain opacity-100 ${logo.className}`}
             />
           </div>
         ))}

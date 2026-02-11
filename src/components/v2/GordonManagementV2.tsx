@@ -1,7 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import RollText from "./RollText";
+
+const clients = [
+  { name: "Octopus Energy Generation", src: "/logos/oe-generation.svg", className: "" },
+  { name: "Denham Capital", src: "/logos/denham-capital.svg", className: "!h-7 md:!h-11" },
+  { name: "CrossBoundary", src: "/logos/crossboundary-dark.svg", className: "" },
+  { name: "SALT", src: "/logos/salt-logo.png", className: "!h-7 md:!h-11" },
+];
 
 function FundraisingIcon() {
   const t = { repeat: Infinity, repeatType: "loop" as const, repeatDelay: 3, ease: "easeInOut" as const };
@@ -144,11 +152,11 @@ export default function GordonManagementV2() {
               className="flex flex-col gap-4 md:gap-6 p-4 md:p-8 cursor-pointer"
             >
               <div className="shrink-0">{serviceIcons[i]}</div>
-              <div className="flex flex-col gap-2 md:gap-3">
+              <div className="flex flex-col gap-3 md:gap-5">
                 <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-card-bg)] whitespace-pre-line">
                   {service.title}
                 </h3>
-                <p className="font-sans-main text-sm md:text-lg font-normal leading-[1.25] tracking-[-0.36px] text-[var(--color-card-bg)]/50">
+                <p className="font-sans-main text-sm md:text-lg font-normal leading-[1.6] tracking-[-0.36px] text-[var(--color-card-bg)]/50">
                   {service.description}
                 </p>
               </div>
@@ -156,19 +164,55 @@ export default function GordonManagementV2() {
           ))}
         </div>
 
-        {/* Learn more link */}
+        {/* Learn more button */}
         <div className="flex items-center justify-start md:justify-center pl-4 md:pl-0">
           <a
             href="https://www.gordonmgmt.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-card-bg)] transition-colors"
+            className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-card-bg)]/30 bg-transparent hover:bg-[var(--color-card-bg)] transition-colors duration-300"
           >
-            <RollText text="Learn more" />{" "}
-            <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
+              <RollText text="Learn more" />
             </span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
+              <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </a>
+        </div>
+
+        {/* Client logos carousel */}
+        <div className="w-full overflow-hidden mt-16 md:mt-24">
+          <div className="flex animate-scroll w-max">
+            {clients.map((client) => (
+              <div
+                key={client.name}
+                className="flex items-center justify-center h-16 md:h-24 px-8 md:px-16 shrink-0"
+              >
+                <Image
+                  src={client.src}
+                  alt={client.name}
+                  width={148}
+                  height={64}
+                  className={`h-8 md:h-12 w-auto object-contain opacity-50 invert ${client.className}`}
+                />
+              </div>
+            ))}
+            {clients.map((client) => (
+              <div
+                key={`dup-${client.name}`}
+                className="flex items-center justify-center h-16 md:h-24 px-8 md:px-16 shrink-0"
+              >
+                <Image
+                  src={client.src}
+                  alt={client.name}
+                  width={148}
+                  height={64}
+                  className={`h-8 md:h-12 w-auto object-contain opacity-50 invert ${client.className}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

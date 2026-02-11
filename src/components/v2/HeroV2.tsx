@@ -65,7 +65,7 @@ export default function HeroV2() {
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] rounded-2xl overflow-hidden"
+        className="relative w-full h-[600px] sm:h-[650px] md:h-[700px] lg:h-[800px] rounded-2xl overflow-hidden"
       >
         <Image
           src="/images/newsletter-portrait.jpg"
@@ -85,7 +85,7 @@ export default function HeroV2() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-white/90 text-left md:text-right whitespace-pre-line pb-2 mt-4 md:mt-0"
+              className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-white/90 text-left md:text-right whitespace-pre-line pb-2 mt-8 md:mt-0"
             >
               {"Energy expert: investor,\nwriter, convenor, speaker"}
             </motion.p>

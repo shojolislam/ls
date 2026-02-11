@@ -34,8 +34,7 @@ export default function BookV2() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            whileHover={{ rotate: -2, scale: 1.02 }}
-            className="w-full max-w-[320px] md:w-[423px] md:max-w-none h-auto md:h-[601px] object-cover shrink-0"
+            className="w-full max-w-[320px] md:w-[423px] md:max-w-none h-auto md:h-[601px] object-cover shrink-0 rounded-xl md:rounded-2xl"
           />
 
           {/* Description */}

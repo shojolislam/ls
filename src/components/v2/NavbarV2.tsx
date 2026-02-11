@@ -22,7 +22,7 @@ function NavLink({
   onClick?: () => void;
 }) {
   const className =
-    "group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors";
+    "group/link font-sans-main text-[16px] font-medium leading-none tracking-[-0.4px] text-[var(--color-dark)] transition-colors";
 
   const content = (
     <>
@@ -68,7 +68,7 @@ export default function NavbarV2() {
     >
       <Link
         href="/"
-        className="font-sans-main text-lg md:text-xl font-bold leading-none tracking-[-0.4px] text-[var(--color-dark)]"
+        className="font-sans-main text-[24px] font-bold leading-none tracking-[-0.4px] text-[var(--color-dark)]"
       >
         Lucy Shaw
       </Link>

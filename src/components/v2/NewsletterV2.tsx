@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import RollText from "./RollText";
 
 export default function NewsletterV2() {
   return (
-    <section className="p-2 pb-12 md:pb-20 w-full">
+    <section className="w-full p-4 pb-12 md:pb-20">
       <div className="bg-[var(--color-body)] overflow-hidden w-full rounded-2xl">
         <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[520px]">
           {/* Left content */}
@@ -21,7 +22,7 @@ export default function NewsletterV2() {
               <h2 className="font-sans-main text-[32px] sm:text-[48px] md:text-[64px] font-semibold leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-card-bg)]">
                 Slow Burn newsletter
               </h2>
-              <p className="font-sans-main text-base md:text-[18px] font-normal leading-[1.5] tracking-[-0.18px] text-[var(--color-card-bg)]/70 max-w-[540px]">
+              <p className="font-sans-main text-base md:text-[18px] font-normal leading-[1.6] tracking-[-0.18px] text-[var(--color-card-bg)]/70 max-w-[540px]">
                 Unpacking the progress and pitfalls of the energy transition -
                 investment, politics, and power in the UK and globally.
               </p>
@@ -33,16 +34,14 @@ export default function NewsletterV2() {
                 href="https://esgstuff.substack.com/subscribe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn relative inline-block font-sans-main text-base md:text-lg font-medium tracking-[-0.36px] px-6 md:px-8 py-3 md:py-4 bg-[var(--color-card-bg)] text-[var(--color-body)] hover:bg-transparent hover:text-[var(--color-card-bg)] transition-colors duration-300 ease-in-out overflow-hidden"
+                className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-card-bg)]/30 bg-transparent hover:bg-[var(--color-card-bg)] transition-colors duration-300"
               >
-                {/* Animated border that draws on hover */}
-                <span className="absolute inset-0 pointer-events-none">
-                  <span className="absolute top-0 left-0 h-[2px] w-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out group-hover/btn:w-full" />
-                  <span className="absolute top-0 right-0 w-[2px] h-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-150 group-hover/btn:h-full" />
-                  <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-300 group-hover/btn:w-full" style={{ direction: "rtl" }} />
-                  <span className="absolute bottom-0 left-0 w-[2px] h-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-[450ms] group-hover/btn:h-full" style={{ bottom: 0, top: "auto", transformOrigin: "bottom" }} />
+                <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
+                  <RollText text="Subscribe" />
                 </span>
-                Subscribe
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
+                  <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
             </div>
           </motion.div>
