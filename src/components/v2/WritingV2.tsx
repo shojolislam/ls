@@ -48,14 +48,14 @@ export default function WritingV2() {
     <section className="py-24 md:py-52 px-4 md:px-8 w-full">
       <div className="bg-white rounded-2xl overflow-hidden">
         {/* Header: matches Newsletter layout — text with padding, image edge-to-edge */}
-        <div className="flex flex-col md:flex-row md:items-end min-h-[400px] md:min-h-[464px]">
+        <div className="flex flex-col md:flex-row md:items-end">
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-end flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-8 md:pb-10"
+            className="flex flex-col justify-end flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-6 md:pb-0"
           >
             <div className="flex flex-col gap-3 md:gap-4">
               <h2 className="font-sans-main text-[32px] sm:text-[48px] md:text-[64px] font-semibold leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-body)]">
@@ -88,7 +88,7 @@ export default function WritingV2() {
         </div>
 
         {/* Articles list — px-4 matches image's p-4 so hover aligns with image edges */}
-        <div className="flex flex-col px-4 pb-8 md:pb-14">
+        <div className="flex flex-col px-4 pt-8 md:pt-14 pb-8 md:pb-14">
           {articles.map((article, i) => (
             <motion.a
               key={article.title}

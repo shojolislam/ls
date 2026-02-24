@@ -22,7 +22,7 @@ function BookDesktop() {
 
   // Book cover: scroll 0–0.08
   const coverOpacity = useTransform(scrollYProgress, [0, 0.08], [0, 1]);
-  const coverX = useTransform(scrollYProgress, [0, 0.08], [-30, 0]);
+  const coverX = useTransform(scrollYProgress, [0, 0.08], [30, 0]);
 
   // Email link: appears at end of scroll
   const emailOpacity = useTransform(scrollYProgress, [0.85, 0.95], [0, 1]);
@@ -44,124 +44,123 @@ function BookDesktop() {
   const totalWords = allWords.length;
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] w-full hidden md:block">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="w-full px-6">
-          <div className="flex flex-col items-center gap-16">
-            {/* Header — always visible */}
-            <div className="flex flex-col items-center gap-6 text-center">
+    <div ref={containerRef} className="relative h-[300vh] w-full hidden lg:block px-4 lg:px-8">
+      <div className="sticky top-0 h-screen flex items-start overflow-hidden pt-28">
+        <div className="w-full bg-white rounded-2xl overflow-hidden flex flex-row">
+          {/* Left column: header + scroll text */}
+          <div className="flex flex-col gap-10 flex-1 min-w-0 p-8 lg:p-12 xl:p-14">
+            {/* Header */}
+            <div className="flex flex-col gap-4">
               <span className="font-sans-main text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
                 The book
               </span>
-              <h2 className="font-sans-main text-[72px] font-semibold leading-[1.1] tracking-[-1.44px] text-[var(--color-body)] max-w-[836px]">
+              <h2 className="font-sans-main text-[48px] lg:text-[64px] xl:text-[72px] font-semibold leading-[1.1] tracking-[-1.44px] text-[var(--color-body)]">
                 Slow Burn: why we can&apos;t quit coal
               </h2>
             </div>
 
-            {/* Content */}
-            <div className="flex flex-row items-start gap-[60px] max-w-[1024px]">
-              {/* Book cover */}
-              <motion.img
-                src="/images/book-cover.png"
-                alt="Slow Burn: Why we can't quit coal by Lucy Shaw"
-                width={423}
-                height={601}
-                style={{ opacity: coverOpacity, x: coverX }}
-                className="w-[423px] max-w-none h-[601px] object-cover shrink-0 rounded-2xl"
-              />
-
-              {/* Description — word-by-word reveal */}
-              <div className="flex flex-col justify-start">
-                <div className="font-sans-main text-[22px] font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)]">
-                  {allWords.map((word, i) => {
-                    if (i === contactBreakIndex) {
-                      return (
-                        <span key={i}>
-                          <span className="block h-6" />
-                          <ScrollRevealWord
-                            word={word}
-                            index={i}
-                            totalWords={totalWords}
-                            scrollYProgress={scrollYProgress}
-                            rangeStart={0.08}
-                            rangeEnd={0.85}
-                          />
-                          {" "}
-                        </span>
-                      );
-                    }
-                    return (
-                      <span key={i}>
-                        {paragraphBreakIndices.has(i) && (
-                          <span className="block h-6" />
-                        )}
-                        <ScrollRevealWord
-                          word={word}
-                          index={i}
-                          totalWords={totalWords}
-                          scrollYProgress={scrollYProgress}
-                          rangeStart={0.08}
-                          rangeEnd={0.85}
-                        />
-                        {i < totalWords - 1 ? " " : ""}
-                      </span>
-                    );
-                  })}
-                  <motion.a
-                    href="mailto:adrian@krugercowne.com"
-                    className="underline"
-                    style={{ opacity: emailOpacity }}
-                  >
-                    adrian@krugercowne.com
-                  </motion.a>
-                </div>
-              </div>
+            {/* Description — word-by-word reveal */}
+            <div className="font-sans-main text-[18px] lg:text-[20px] xl:text-[22px] font-normal leading-[1.5] tracking-[-0.24px] text-[var(--color-text-primary)]">
+              {allWords.map((word, i) => {
+                if (i === contactBreakIndex) {
+                  return (
+                    <span key={i}>
+                      <span className="block h-6" />
+                      <ScrollRevealWord
+                        word={word}
+                        index={i}
+                        totalWords={totalWords}
+                        scrollYProgress={scrollYProgress}
+                        rangeStart={0.08}
+                        rangeEnd={0.85}
+                      />
+                      {" "}
+                    </span>
+                  );
+                }
+                return (
+                  <span key={i}>
+                    {paragraphBreakIndices.has(i) && (
+                      <span className="block h-6" />
+                    )}
+                    <ScrollRevealWord
+                      word={word}
+                      index={i}
+                      totalWords={totalWords}
+                      scrollYProgress={scrollYProgress}
+                      rangeStart={0.08}
+                      rangeEnd={0.85}
+                    />
+                    {i < totalWords - 1 ? " " : ""}
+                  </span>
+                );
+              })}
+              <motion.a
+                href="mailto:adrian@krugercowne.com"
+                className="underline"
+                style={{ opacity: emailOpacity }}
+              >
+                adrian@krugercowne.com
+              </motion.a>
             </div>
           </div>
+
+          {/* Right column: book cover with matching padding */}
+          <motion.div
+            style={{ opacity: coverOpacity, x: coverX }}
+            className="w-[420px] xl:w-[480px] shrink-0 p-8 lg:p-12 xl:p-14"
+          >
+            <img
+              src="/images/book-cover.png"
+              alt="Slow Burn: Why we can't quit coal by Lucy Shaw"
+              className="w-full h-auto object-contain rounded-2xl"
+            />
+          </motion.div>
         </div>
       </div>
     </div>
   );
 }
 
-/* Mobile static version — no scroll effect */
+/* Mobile/tablet static version — no scroll effect */
 function BookMobile() {
   return (
-    <div className="md:hidden py-20 w-full px-4">
-      <div className="flex flex-col items-center gap-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center gap-6 text-center"
-        >
-          <span className="font-sans-main text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
-            The book
-          </span>
-          <h2 className="font-sans-main text-[36px] font-semibold leading-[1.1] tracking-[-0.72px] text-[var(--color-body)] max-w-[836px]">
-            Slow Burn: why we can&apos;t quit coal
-          </h2>
-        </motion.div>
+    <div className="lg:hidden py-20 w-full px-4">
+      <div className="bg-white rounded-2xl p-6 md:p-10">
+        <div className="flex flex-col gap-8">
+          {/* Header — left-aligned */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-4"
+          >
+            <span className="font-sans-main text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
+              The book
+            </span>
+            <h2 className="font-sans-main text-[36px] font-semibold leading-[1.1] tracking-[-0.72px] text-[var(--color-body)]">
+              Slow Burn: why we can&apos;t quit coal
+            </h2>
+          </motion.div>
 
-        {/* Content */}
-        <div className="flex flex-col items-start gap-8">
+          {/* Book cover — above text, smaller */}
           <motion.img
             src="/images/book-cover.png"
             alt="Slow Burn: Why we can't quit coal by Lucy Shaw"
             width={423}
             height={601}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="w-full max-w-[320px] h-auto object-cover shrink-0 rounded-xl"
+            className="w-full max-w-[240px] h-auto object-cover shrink-0 rounded-xl"
           />
 
+          {/* Body text */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col justify-start"

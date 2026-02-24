@@ -112,18 +112,18 @@ export default function FooterV2() {
   return (
     <section className="w-full p-4">
       {/* Large name */}
-      <div className="px-0 py-4 md:p-6">
+      <div className="px-0 py-4 md:p-6 md:pb-12">
         <AnimatedFooterTitle />
       </div>
 
       {/* Bottom row: tagline left, links right — horizontally aligned */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-4 px-0 py-4 md:px-6 md:pb-6">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-4 px-0 py-4 md:px-6 md:pb-6">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] shrink-0"
+          className="font-sans-main text-lg lg:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] shrink-0"
         >
           Energy expert: investor, writer, convenor, speaker
         </motion.p>
@@ -133,7 +133,7 @@ export default function FooterV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-wrap items-center gap-4 md:gap-10"
+          className="flex flex-wrap items-center gap-4 lg:gap-10"
         >
           {links.map((link, i) => (
             <motion.a

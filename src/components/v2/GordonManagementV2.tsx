@@ -78,7 +78,7 @@ export default function GordonManagementV2() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-            className="group grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-4 md:gap-8 py-8 md:py-10 px-4 md:px-6 -mx-4 md:-mx-6 rounded-xl border-t border-[var(--color-dark)]/10 last:border-b cursor-default transition-colors duration-300 hover:bg-[var(--color-dark)]/[0.04]"
+            className="group grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-4 md:gap-8 py-8 md:py-10 px-4 md:px-6 -mx-4 md:-mx-6 border-t border-[var(--color-dark)]/10 last:border-b cursor-default transition-colors duration-300 hover:bg-[var(--color-dark)]/[0.04]"
           >
             {/* Number + Title — stacked vertically */}
             <div className="flex flex-col gap-2 md:contents">
