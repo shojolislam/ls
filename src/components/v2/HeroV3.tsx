@@ -120,6 +120,10 @@ function LatestCarousel() {
     setActive((prev) => (prev + 1) % total);
   }, [total]);
 
+  const prev = useCallback(() => {
+    setActive((prev) => (prev - 1 + total) % total);
+  }, [total]);
+
   // Auto-scroll every 5 seconds
   useEffect(() => {
     const interval = setInterval(next, 5000);
@@ -135,9 +139,9 @@ function LatestCarousel() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="font-sans-main text-sm md:text-lg font-normal tracking-[-0.36px] text-white/50"
+        className="font-sans-main text-base md:text-xl font-medium tracking-[-0.4px] text-white/50"
       >
-        Lucy&apos;s Latest
+        Latest News
       </motion.span>
 
       {/* Cards track — fixed height container */}
@@ -218,18 +222,24 @@ function LatestCarousel() {
         </AnimatePresence>
       </div>
 
-      {/* Progress dots */}
-      <div className="flex items-center gap-2.5">
-        {latestPosts.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`
-              h-1.5 rounded-full transition-all duration-300
-              ${i === active ? "w-7 bg-white" : "w-2 bg-white/30 hover:bg-white/50"}
-            `}
-          />
-        ))}
+      {/* Navigation arrows */}
+      <div className="flex items-center gap-3">
+        <button
+          onClick={prev}
+          className="w-10 h-10 flex items-center justify-center rounded-full border border-white/30 text-white/60 hover:text-white hover:border-white/60 transition-colors duration-200"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M12.67 8H3.33M3.33 8L7.33 4M3.33 8L7.33 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <button
+          onClick={next}
+          className="w-10 h-10 flex items-center justify-center rounded-full border border-white/30 text-white/60 hover:text-white hover:border-white/60 transition-colors duration-200"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ const logos = [
   { name: "UN WFP", src: "/logos/wfp-logo.svg", className: "!h-12 md:!h-16 rounded" },
   { name: "Vena Energy", src: "/logos/vena-group.png", className: "" },
   { name: "Harvard Center for International Development", src: "/logos/harvard-cid-logo.svg", className: "" },
+  { name: "Imperial War Museums", src: "/logos/iwm.svg", className: "!h-8 md:!h-12" },
 ];
 
 export default function LogoBarV2() {

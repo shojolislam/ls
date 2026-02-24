@@ -8,6 +8,7 @@ const clients: { name: string; src: string; className: string; style?: React.CSS
   { name: "CrossBoundary", src: "/logos/crossboundary-dark.svg", className: "" },
   { name: "SALT", src: "/logos/salt-logo.png", className: "!h-6 md:!h-8", style: { filter: "brightness(0) saturate(100%) invert(72%) sepia(25%) saturate(746%) hue-rotate(167deg) brightness(95%) contrast(87%)" } },
   { name: "BasiGo", src: "/logos/basigo-logo.webp", className: "" },
+  { name: "Globeleq", src: "/logos/globeleq.svg", className: "" },
 ];
 
 export default function ClientsV2() {

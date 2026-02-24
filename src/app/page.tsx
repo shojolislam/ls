@@ -47,10 +47,11 @@ export default function Home() {
         <BookV2 />
       </main>
 
-      {/* Culture — full-width staggered gallery */}
+      {/* Culture — hidden for now, uncomment to restore
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
         <CultureV2 />
       </div>
+      */}
 
       {/* Newsletter — max-width constrained */}
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">

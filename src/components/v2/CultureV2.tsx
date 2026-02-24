@@ -22,7 +22,7 @@ const posts = [
 
 export default function CultureV2() {
   return (
-    <section className="w-full px-4 md:px-10 pt-24 md:pt-52 pb-24 md:pb-52">
+    <section className="w-full px-4 md:px-10 pt-12 md:pt-24 pb-24 md:pb-52">
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
