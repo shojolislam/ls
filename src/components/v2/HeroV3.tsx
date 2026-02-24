@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 
 /* ─── Animated title ─── */
@@ -111,18 +112,20 @@ const CARD_STEP = CARD_WIDTH + CARD_GAP;
 /* ─── Carousel ─── */
 function LatestCarousel() {
   const total = latestPosts.length;
-  const [active, setActive] = useState(0);
+  const [[active, direction], setPage] = useState<[number, number]>([0, 1]);
 
   const getIndex = (offset: number) =>
     ((active + offset) % total + total) % total;
 
-  const next = useCallback(() => {
-    setActive((prev) => (prev + 1) % total);
-  }, [total]);
+  const paginate = useCallback(
+    (dir: number) => {
+      setPage(([prev]) => [((prev + dir) % total + total) % total, dir]);
+    },
+    [total]
+  );
 
-  const prev = useCallback(() => {
-    setActive((prev) => (prev - 1 + total) % total);
-  }, [total]);
+  const next = useCallback(() => paginate(1), [paginate]);
+  const prev = useCallback(() => paginate(-1), [paginate]);
 
   // Auto-scroll every 5 seconds
   useEffect(() => {
@@ -139,7 +142,7 @@ function LatestCarousel() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="font-sans-main text-base md:text-xl font-medium tracking-[-0.4px] text-white/50"
+        className="font-sans-main text-3xl md:text-5xl font-semibold tracking-[-0.6px] text-white/50"
       >
         Latest News
       </motion.span>
@@ -149,32 +152,37 @@ function LatestCarousel() {
         className="relative overflow-hidden"
         style={{ height: 340 }}
       >
-        <AnimatePresence initial={false} mode="popLayout">
+        <AnimatePresence initial={false} custom={direction}>
           {slots.map((slot) => {
             const idx = getIndex(slot);
             const isActive = slot === 0;
 
-            const delay = slot * 0.06;
+            const cardVariants: Variants = {
+              enter: (dir: number) => ({
+                x: dir > 0 ? 3 * CARD_STEP : -CARD_STEP,
+                opacity: 0,
+              }),
+              center: {
+                x: slot * CARD_STEP,
+                opacity: 1,
+              },
+              exit: (dir: number) => ({
+                x: dir > 0 ? -CARD_STEP : 3 * CARD_STEP,
+                opacity: 0,
+              }),
+            };
 
             return (
               <motion.div
                 key={idx}
-                initial={{ x: 3 * CARD_STEP }}
-                animate={{
-                  x: slot * CARD_STEP,
-                  transition: {
-                    duration: 0.5,
-                    delay,
-                    ease: [0.33, 1, 0.68, 1],
-                  },
-                }}
-                exit={{
-                  x: -CARD_STEP,
-                  transition: {
-                    duration: 0.5,
-                    delay,
-                    ease: [0.33, 1, 0.68, 1],
-                  },
+                custom={direction}
+                variants={cardVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  duration: 0.45,
+                  ease: [0.33, 1, 0.68, 1],
                 }}
                 className="absolute top-0 left-0"
                 style={{ width: CARD_WIDTH }}
