@@ -55,7 +55,7 @@ She holds an MBA from Harvard Business School — graduating as a Baker Scholar 
           className="relative w-3/4 aspect-[3/4] overflow-hidden rounded-xl self-end"
         >
           <Image
-            src="/images/about-coal.jpg"
+            src="/images/about-coal-site.jpg"
             alt="Lucy Shaw at coal site"
             fill
             className="object-cover object-center"
@@ -108,8 +108,8 @@ She holds an MBA from Harvard Business School — graduating as a Baker Scholar 
             className="relative w-3/5 aspect-[3/4] overflow-hidden rounded-2xl self-end"
           >
             <Image
-              src="/images/about-library.png"
-              alt="Lucy Shaw in library"
+              src="/images/about-coal-site.jpg"
+              alt="Lucy Shaw at coal site"
               fill
               className="object-cover object-center"
               sizes="25vw"
