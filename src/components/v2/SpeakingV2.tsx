@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import RollText from "./RollText";
 
-type EventItem = {
+export type EventItem = {
   title: string;
   venue: string;
   date: string;
@@ -18,7 +18,7 @@ type EventItem = {
   category: "speaking" | "convening";
 };
 
-const events: EventItem[] = [
+export const events: EventItem[] = [
   {
     title: "SALT London 2025",
     venue: "London, UK",
@@ -202,7 +202,7 @@ const events: EventItem[] = [
 ];
 
 /* ─── Event detail modal ─── */
-function EventModal({
+export function EventModal({
   event,
   onClose,
 }: {
@@ -342,7 +342,7 @@ function EventModal({
 }
 
 /* ─── Single event card ─── */
-function EventCard({
+export function EventCard({
   event,
   index,
   onClick,
@@ -473,7 +473,7 @@ export default function SpeakingV2() {
             href="/talks"
             className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300"
           >
-            <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+            <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
               <RollText text="View all" />
             </span>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">

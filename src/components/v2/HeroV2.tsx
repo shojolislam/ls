@@ -85,9 +85,9 @@ export default function HeroV2() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-white/90 text-left md:text-right whitespace-pre-line pb-2 mt-8 md:mt-0"
+              className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-white/90 text-left md:text-right pb-2 mt-8 md:mt-0"
             >
-              {"Energy expert: investor,\nwriter, convenor, speaker"}
+              Energy expert: investor, writer, convenor, speaker
             </motion.p>
           </div>
         </div>

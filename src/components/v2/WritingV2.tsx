@@ -48,14 +48,14 @@ export default function WritingV2() {
     <section className="py-24 md:py-52 px-4 md:px-8 w-full">
       <div className="bg-white rounded-2xl overflow-hidden">
         {/* Header: matches Newsletter layout — text with padding, image edge-to-edge */}
-        <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[464px]">
+        <div className="flex flex-col md:flex-row md:items-end min-h-[400px] md:min-h-[464px]">
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-between flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-8 md:pb-10"
+            className="flex flex-col justify-end flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-8 md:pb-10"
           >
             <div className="flex flex-col gap-3 md:gap-4">
               <h2 className="font-sans-main text-[32px] sm:text-[48px] md:text-[64px] font-semibold leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-body)]">
@@ -73,7 +73,7 @@ export default function WritingV2() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full md:w-[320px] h-[300px] md:h-auto shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
+            className="w-full md:w-[320px] h-[300px] md:h-[420px] shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
           >
             <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
@@ -99,10 +99,17 @@ export default function WritingV2() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group relative flex items-center gap-4 md:gap-10 py-6 px-2 md:px-8 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gray-100 ${
-                i % 2 !== 0 ? "flex-row-reverse" : ""
-              }`}
+              className="group relative flex flex-row-reverse md:flex-row items-center gap-4 md:gap-10 py-6 px-2 md:px-8 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gray-100"
             >
+              <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 96px, 160px"
+                />
+              </div>
               <div className="flex flex-col gap-3 md:gap-4 flex-1">
                 <span className="font-sans-main text-base md:text-lg font-semibold tracking-[-0.36px] leading-none text-[var(--color-body)]">
                   {article.publication}
@@ -113,15 +120,6 @@ export default function WritingV2() {
                 <span className="font-sans-main text-sm md:text-base font-normal tracking-[-0.32px] leading-none text-[var(--color-dark)]/60">
                   {article.date}
                 </span>
-              </div>
-              <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 96px, 160px"
-                />
               </div>
             </motion.a>
           ))}
@@ -137,7 +135,7 @@ export default function WritingV2() {
               href="/writing"
               className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300"
             >
-              <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+              <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
                 <RollText text="View all" />
               </span>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">

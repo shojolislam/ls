@@ -1,119 +1,106 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import NavbarV2 from "@/components/v2/NavbarV2";
 import FooterV2 from "@/components/v2/FooterV2";
+import {
+  events,
+  EventCard,
+  EventModal,
+  type EventItem,
+} from "@/components/v2/SpeakingV2";
 
-const events = [
-  {
-    title: "SALT London 2025 - AI panel",
-    venue: "London, UK",
-    image: "/images/talk-1.png",
-    href: "https://www.youtube.com/watch?v=pT4s0NaYjTw",
-  },
-  {
-    title: "FT Sustainable Views Interview 2025",
-    venue: "Oxford, UK",
-    image: "/images/talk-5.png",
-    href: "https://www.linkedin.com/posts/sustainable-views_lucy-shaw-founder-of-investment-adviser-activity-7384603019092324352-VVeH",
-  },
-  {
-    title: "Earth Set 2026 - the coal transition",
-    venue: "Conference",
-    image: "/images/talk-2.png",
-    href: "https://www.earthset.co/blog/roger-wzkh5-axc94-a5am6-d5pwd-7es6s-sl274-kdp9y-ftxa5-b84sm-7w2c3-37bb3-dbrak-65zd6-59s4e-6wcgh-fmfd6-ll82z",
-  },
-  {
-    title: "Wales Investment Summit 2025",
-    venue: "Wales, UK",
-    image: "/images/talk-1.png",
-    href: "https://www.linkedin.com/posts/lucyfionashaw_we-need-more-events-like-this-thats-what-activity-7368221154597081089-ffYr",
-  },
-  {
-    title: "Energy Revolution Podcast 2025",
-    venue: "Podcast",
-    image: "/images/talk-4.png",
-    href: "https://open.spotify.com/episode/1dkre9aIGn4f29ue8ESi8O",
-  },
-  {
-    title: "Woodmac 2025 Power Investment",
-    venue: "Conference",
-    image: "/images/talk-3.png",
-    href: "#",
-  },
-  {
-    title: "AusIMM Conference",
-    venue: "Conference",
-    image: "/images/talk-1.png",
-    href: "#",
-  },
-  {
-    title: "HBS Speaking Engagement",
-    venue: "Harvard Business School",
-    image: "/images/talk-2.png",
-    href: "#",
-  },
-  {
-    title: "Fabian Women's Network",
-    venue: "London, UK",
-    image: "/images/talk-3.png",
-    href: "#",
-  },
+type Filter = "all" | "speaking" | "convening";
+
+const tabs: { label: string; value: Filter }[] = [
+  { label: "All", value: "all" },
+  { label: "Speaking", value: "speaking" },
+  { label: "Convening", value: "convening" },
 ];
 
 export default function TalksPage() {
+  const [filter, setFilter] = useState<Filter>("all");
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+
+  const filtered =
+    filter === "all"
+      ? events
+      : events.filter((e) => e.category === filter);
+
   return (
     <div className="w-full bg-[var(--color-card-bg)] min-h-screen">
       <NavbarV2 />
 
-      <div className="max-w-[1440px] mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-24 md:pb-40">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-sans-main text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] font-semibold leading-none tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)] mb-16 md:mb-24"
-        >
-          On Stage &<br />On Air
-        </motion.h1>
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-24 md:pb-40">
+        {/* Header row: title + filter tabs */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-12 md:mb-20">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="font-sans-main text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] font-semibold leading-none tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)]"
+          >
+            On Stage &<br />On Air
+          </motion.h1>
 
-        <div className="flex flex-col max-w-[960px]">
-          {events.map((event, i) => (
-            <motion.a
-              key={event.title}
-              href={event.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="group relative flex items-center gap-4 md:gap-10 py-6 md:py-9 cursor-pointer"
-            >
-              <div className="w-32 h-24 md:w-64 md:h-40 shrink-0 relative overflow-hidden rounded-lg">
-                <Image
-                  src={event.image}
-                  alt={event.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 128px, 256px"
-                />
-              </div>
-              <div className="flex flex-col gap-2 md:gap-3 flex-1">
-                <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
-                  {event.title}
-                </h3>
-                <span className="font-sans-main text-sm md:text-lg font-normal tracking-[-0.36px] leading-[1.4] text-[var(--color-dark)]">
-                  {event.venue}
-                </span>
-              </div>
-{/* No border lines */}
-            </motion.a>
-          ))}
+          <div className="flex items-center gap-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.value}
+                onClick={() => setFilter(tab.value)}
+                className={`
+                  font-sans-main text-[14px] md:text-[16px] font-medium tracking-[-0.32px] leading-none px-5 py-2.5 md:px-6 md:py-3 rounded-full border transition-colors duration-200
+                  ${
+                    filter === tab.value
+                      ? "bg-[var(--color-body)] text-[var(--color-card-bg)] border-[var(--color-body)]"
+                      : "text-[var(--color-dark)]/50 border-[var(--color-dark)]/20 hover:text-[var(--color-dark)] hover:border-[var(--color-dark)]/40"
+                  }
+                `}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* Event grid — all events */}
+        <motion.div
+          layout
+          className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-x-6 md:gap-y-12"
+        >
+          <AnimatePresence mode="popLayout">
+            {filtered.map((event, i) => (
+              <motion.div
+                key={event.title}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+              >
+                <EventCard
+                  event={event}
+                  index={i}
+                  onClick={() => setSelectedEvent(event)}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       <FooterV2 />
+
+      {/* Modal */}
+      <AnimatePresence>
+        {selectedEvent && (
+          <EventModal
+            event={selectedEvent}
+            onClose={() => setSelectedEvent(null)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

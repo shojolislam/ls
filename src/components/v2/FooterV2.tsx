@@ -111,14 +111,29 @@ function AnimatedFooterTitle() {
 export default function FooterV2() {
   return (
     <section className="w-full p-4">
-      {/* Top section: links + name */}
-      <div className="flex justify-between items-start px-0 py-4 md:p-6">
+      {/* Large name */}
+      <div className="px-0 py-4 md:p-6">
+        <AnimatedFooterTitle />
+      </div>
+
+      {/* Bottom row: tagline left, links right — horizontally aligned */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-4 px-0 py-4 md:px-6 md:pb-6">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] shrink-0"
+        >
+          Energy expert: investor, writer, convenor, speaker
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-4 md:gap-6"
+          className="flex flex-wrap items-center gap-4 md:gap-10"
         >
           {links.map((link, i) => (
             <motion.a
@@ -126,8 +141,8 @@ export default function FooterV2() {
               href={link.href}
               target={link.href.startsWith("mailto:") ? undefined : "_blank"}
               rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
               className="group/link font-sans-main text-[16px] md:text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center"
@@ -137,23 +152,6 @@ export default function FooterV2() {
             </motion.a>
           ))}
         </motion.div>
-
-      </div>
-
-      {/* Bottom section: large name + subtitle */}
-      <div className="flex flex-col md:flex-row justify-between md:items-end px-0 py-4 md:p-6 pt-6 md:pt-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-8 md:gap-4">
-          <AnimatedFooterTitle />
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] md:text-right whitespace-pre-line shrink-0"
-          >
-            {"Energy expert: investor,\nwriter, convenor, speaker"}
-          </motion.p>
-        </div>
       </div>
     </section>
   );

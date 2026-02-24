@@ -35,7 +35,7 @@ export default function NewsletterV2() {
                 rel="noopener noreferrer"
                 className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-card-bg)]/30 bg-transparent hover:bg-[var(--color-card-bg)] transition-colors duration-300"
               >
-                <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
+                <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
                   <RollText text="Subscribe" />
                 </span>
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-card-bg)] group-hover/link:text-[var(--color-body)] transition-colors duration-300">
