@@ -8,7 +8,7 @@ import RollText from "./RollText";
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Investing", href: "/#investing" },
-  { label: "Writing", href: "/writing" },
+  { label: "Writing", href: "/#writing" },
   { label: "Speaking", href: "/#speaking" },
   { label: "Book", href: "/#book" },
 ];
@@ -34,10 +34,23 @@ function NavLink({
     </>
   );
 
-  // Hash links and mailto use regular <a> for reliable cross-page navigation
+  // Hash links and mailto: scroll programmatically so mobile menu close doesn't interfere
   if (item.href.startsWith("/#") || item.href.startsWith("mailto:")) {
+    const handleClick = (e: React.MouseEvent) => {
+      if (item.href.startsWith("/#")) {
+        e.preventDefault();
+        const id = item.href.replace("/#", "");
+        onClick?.();
+        // Delay scroll so mobile menu exit animation doesn't block it
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      } else {
+        onClick?.();
+      }
+    };
     return (
-      <a href={item.href} className={className} onClick={onClick}>
+      <a href={item.href} className={className} onClick={handleClick}>
         {content}
       </a>
     );
@@ -85,9 +98,9 @@ function ContactModal({ onClose }: { onClose: () => void }) {
           </svg>
         </button>
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col-reverse md:flex-row">
           {/* Left: title + subtext + CTA */}
-          <div className="flex flex-col justify-between gap-8 flex-1 p-8 md:p-12">
+          <div className="flex flex-col justify-between gap-8 flex-1 p-6 md:p-12">
             <div className="flex flex-col gap-4">
               <h3 className="font-sans-main text-[32px] md:text-[48px] font-semibold leading-none tracking-[-0.96px] text-[var(--color-body)]">
                 Get in Touch
@@ -101,7 +114,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
               className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300 w-fit"
             >
               <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
-                <RollText text="Get in Touch" />
+                <RollText text="Get in touch" />
               </span>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
                 <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -109,8 +122,8 @@ function ContactModal({ onClose }: { onClose: () => void }) {
             </a>
           </div>
 
-          {/* Right: contact portrait */}
-          <div className="w-full md:w-[340px] h-[300px] md:h-[480px] shrink-0 relative overflow-hidden">
+          {/* Right/Top: contact portrait */}
+          <div className="w-full md:w-[340px] h-[400px] md:h-[480px] shrink-0 relative overflow-hidden">
             <img
               src="/images/contact-portrait.jpg"
               alt="Lucy Shaw"

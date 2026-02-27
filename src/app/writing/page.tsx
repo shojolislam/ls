@@ -23,22 +23,22 @@ const articles = [
   {
     title: "Clouded Thinking on Business Class Passengers",
     publication: "The Financial Times",
-    date: "29 October 2025",
-    image: "/images/writing-ft-carbon.jpg",
+    date: "2 May 2025",
+    image: "/images/writing-ft-general.jpeg",
     href: "https://www.ft.com/content/f7b2eae3-faf6-4a6c-9be1-2b7553934717",
   },
   {
     title: "Market Reform is Energy Transition's Forgotten Pillar",
     publication: "The Financial Times",
-    date: "2024",
-    image: "/images/writing-ft-carbon.jpg",
+    date: "18 October 2024",
+    image: "/images/writing-ft-general.jpeg",
     href: "https://www.ft.com/content/5c6844da-d0e1-473f-88d5-dee8e492e78d",
   },
   {
     title: "Pet Food Carbon Pawprint",
     publication: "The Financial Times",
-    date: "August 2024",
-    image: "/images/writing-ft-carbon.jpg",
+    date: "2 August 2024",
+    image: "/images/writing-ft-general.jpeg",
     href: "https://www.ft.com/content/77280354-2648-4e44-bc2e-e90919024e4c",
   },
   {
@@ -51,107 +51,51 @@ const articles = [
   {
     title: "Labour's energy policy will not solve the real problems with the grid",
     publication: "Infrastructure Investor",
-    date: "2024",
+    date: "25 June 2024",
     image: "/images/writing-infra-investor.jpg",
     href: "https://infrastructureinvestor.com/labours-energy-policy-will-not-solve-the-real-problems-with-the-grid/",
   },
   {
     title: "Critique of Great British Energy",
     publication: "The Financial Times",
-    date: "2024",
-    image: "/images/writing-ft-carbon.jpg",
+    date: "7 June 2024",
+    image: "/images/writing-ft-general.jpeg",
     href: "https://www.ft.com/content/94a6077e-9904-4302-b778-71d03070868a",
   },
   {
     title: "Who's to blame for carbon credits manipulation?",
     publication: "The Financial Times",
-    date: "2023",
+    date: "17 May 2024",
     image: "/images/writing-ft-carbon.jpg",
     href: "https://www.ft.com/content/d0b2e052-a01a-4ab6-9b12-d73948fe3c38",
   },
   {
     title: "A look inside Itaipú Dam",
     publication: "Hydro Review",
-    date: "2023",
+    date: "15 October 2024",
     image: "/images/writing-hydro-review.jpg",
     href: "https://www.hydroreview.com/hydro-power/dams-civil-structures/a-look-inside-itaipu-dam-the-1-tourism-attraction-for-infrastructure-nerds/",
   },
   {
     title: "When missing an emissions target makes your sustainability bonds more valuable",
     publication: "Substack",
-    date: "2023",
+    date: "24 May 2024",
     image: "/images/writing-esg-finance.jpg",
     href: "https://esgstuff.substack.com/p/esg-finance-when-missing-an-emissions",
   },
   {
     title: "Biomass power: when burning trees is 'net zero'",
     publication: "Substack",
-    date: "2023",
+    date: "28 May 2024",
     image: "/images/writing-biomass.jpg",
     href: "https://esgstuff.substack.com/p/when-trees-dont-release-carbon-dioxide",
   },
   {
-    title: "Prisoners to Petrol: hydrogen cars in California",
+    title: "The proliferation of voluntary carbon market intermediaries",
     publication: "Substack",
-    date: "2023",
-    image: "/images/writing-esg-finance.jpg",
-    href: "https://stufflucywrites.substack.com/p/prisoners-to-petrol-why-americans",
-  },
-  {
-    title: "EV buses investment thesis for East Africa",
-    publication: "Substack",
-    date: "2022",
-    image: "/images/writing-nextbillion.jpg",
-    href: "https://stufflucywrites.substack.com/p/why-electric-buses-make-so-much-sense",
-  },
-  {
-    title: "ESG funds in Europe now actually have to invest in ESG",
-    publication: "Substack",
-    date: "2022",
-    image: "/images/writing-esg-finance.jpg",
-    href: "https://stufflucywrites.substack.com/p/esg-funds-in-europe-now-actually",
-  },
-  {
-    title: "More middle men in carbon markets: insurers",
-    publication: "Substack",
-    date: "2022",
+    date: "13 June 2024",
     image: "/images/writing-carbon-markets.jpg",
     href: "https://esgstuff.substack.com/p/the-proliferation-of-voluntary-carbon",
-  },
-  {
-    title: "Socialised costs of EV charging",
-    publication: "Substack",
-    date: "2022",
-    image: "/images/writing-esg-finance.jpg",
-    href: "https://stufflucywrites.substack.com/p/we-all-pay-for-ev-charging",
-  },
-  {
-    title: "The US EV tariffs and rejecting a low cost energy transition",
-    publication: "Substack",
-    date: "2022",
-    image: "/images/writing-esg-finance.jpg",
-    href: "https://stufflucywrites.substack.com/p/the-us-rejects-cheaper-low-carbon",
-  },
-  {
-    title: "How the UK spends its aid on infrastructure",
-    publication: "Substack",
-    date: "2021",
-    image: "/images/writing-infra-investor.jpg",
-    href: "https://stufflucywrites.substack.com/p/uk-aid-and-infrastructure",
-  },
-  {
-    title: "UK and export financing for energy",
-    publication: "Substack",
-    date: "2021",
-    image: "/images/writing-infra-investor.jpg",
-    href: "https://stufflucywrites.substack.com/p/uk-export-finance-and-energy-infrastructure",
-  },
-  {
-    title: "Why heat pump math doesn't add up in the UK",
-    publication: "Substack",
-    date: "2021",
-    image: "/images/writing-infra-investor.jpg",
-    href: "https://stufflucywrites.substack.com/p/uk-heat-pump-maths-doesnt-add-up",
   },
   {
     title: "A Strict Immigration Policy",
@@ -168,53 +112,25 @@ const articles = [
     href: "https://nextbillion.net/roadmap-scaling-up-renewable-energy-island-nations-eastern-caribbean-transition-from-fossil-fuels/",
   },
   {
-    title: "Private Mini-Grid Firms Deserve a Chance to Compete Against Slow Utilities in Africa",
-    publication: "Green Tech Media",
-    date: "2019",
-    image: "/images/writing-nextbillion.jpg",
-    href: "https://www.greentechmedia.com/articles/read/a-faster-path-to-rural-electrification",
-  },
-  {
-    title: "Minigrids are the cheapest way to bring electricity to 100 million Africans today",
-    publication: "Green Tech Media",
-    date: "2018",
-    image: "/images/writing-nextbillion.jpg",
-    href: "https://www.greentechmedia.com/articles/read/minigrids-are-the-cheapest-way-to-electrify-100-million-africans-today#gs.QohvBis",
-  },
-  {
     title: "More people than ever now have electricity in Africa, but 600 million people are still in the dark",
     publication: "Quartz",
-    date: "2018",
-    image: "/images/writing-nextbillion.jpg",
+    date: "20 July 2022",
+    image: "/images/writing-quartz-africa.jpg",
     href: "https://qz.com/africa/1265780/how-many-people-have-electricity-in-africa",
   },
   {
     title: "Can blended finance solutions fund distributed infrastructure in conflict zones?",
-    publication: "St Gallen Symposium",
-    date: "2018",
-    image: "/images/writing-nextbillion.jpg",
+    publication: "Essays from the Leaders of Tomorrow",
+    date: "29 May 2019",
+    image: "/images/writing-blended-finance.webp",
     href: "https://medium.com/essays-from-the-leaders-of-tomorrow/can-blended-finance-approaches-fund-distributed-infrastructure-in-conflict-zones-a18ce1bfa6c6",
   },
   {
     title: "After all these headline grabbing reforms, is Ethiopia really open for business?",
     publication: "Harvard Africa Policy Journal",
-    date: "2019",
+    date: "8 March 2019",
     image: "/images/writing-harvard.jpg",
     href: "https://studentreview.hks.harvard.edu/after-all-these-headline-grabbing-reforms-is-ethiopia-really-open-for-business/",
-  },
-  {
-    title: "Capital Controls on the streets in Addis Ababa",
-    publication: "Substack",
-    date: "2019",
-    image: "/images/writing-harvard.jpg",
-    href: "https://stufflucywrites.substack.com/p/street-macro-capital-controls",
-  },
-  {
-    title: "Angel Investing as a Minority (Read: A Woman)",
-    publication: "Substack",
-    date: "2021",
-    image: "/images/writing-esg-finance.jpg",
-    href: "https://stufflucywrites.substack.com/p/angel-investing-as-a-minority-read",
   },
 ];
 
@@ -244,8 +160,17 @@ export default function WritingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="group relative flex items-center gap-4 md:gap-10 py-6 px-4 md:px-6 -mx-4 md:-mx-6 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"
+              className="group relative flex flex-row-reverse md:flex-row items-center gap-4 md:gap-10 py-6 px-2 md:px-8 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"
             >
+              <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 96px, 160px"
+                />
+              </div>
               <div className="flex flex-col gap-3 md:gap-4 flex-1">
                 <span className="font-sans-main text-base md:text-lg font-semibold tracking-[-0.36px] leading-none text-[var(--color-body)]">
                   {article.publication}
@@ -256,15 +181,6 @@ export default function WritingPage() {
                 <span className="font-sans-main text-sm md:text-base font-normal tracking-[-0.32px] leading-none text-[var(--color-dark)]/60">
                   {article.date}
                 </span>
-              </div>
-              <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 96px, 160px"
-                />
               </div>
             </motion.a>
           ))}

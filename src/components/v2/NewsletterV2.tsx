@@ -8,14 +8,14 @@ export default function NewsletterV2() {
   return (
     <section className="w-full p-4 pb-12 md:pb-20">
       <div className="bg-[var(--color-body)] overflow-hidden w-full rounded-2xl">
-        <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[464px]">
+        <div className="flex flex-col md:flex-row">
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-between flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-8 md:pb-10"
+            className="flex flex-col justify-between flex-1 p-6 md:p-12"
           >
             {/* Title + subtitle at top */}
             <div className="flex flex-col gap-3 md:gap-4">
@@ -28,7 +28,7 @@ export default function NewsletterV2() {
             </div>
 
             {/* CTA button */}
-            <div className="mt-6 md:mt-16">
+            <div className="mt-auto pt-6">
               <a
                 href="https://esgstuff.substack.com/subscribe"
                 target="_blank"
@@ -51,14 +51,14 @@ export default function NewsletterV2() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full md:w-[320px] h-[300px] md:h-[360px] shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
+            className="w-full md:w-[320px] h-[400px] md:h-[360px] shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
           >
             <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
                 src="/images/newsletter-portrait-v2.jpg"
                 alt="Lucy Shaw"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 320px"
               />
             </div>

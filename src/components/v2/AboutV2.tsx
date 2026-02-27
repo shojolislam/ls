@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function AboutV2() {
   return (
-    <section id="about" className="flex flex-col gap-10 md:gap-16 pb-16 md:pb-32 pt-16 md:pt-32 px-4 md:px-6 w-full">
+    <section id="about" className="flex flex-col gap-10 md:gap-16 pb-6 md:pb-32 pt-16 md:pt-32 px-4 md:px-6 w-full">
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}

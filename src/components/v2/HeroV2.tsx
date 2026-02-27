@@ -28,7 +28,7 @@ function AnimatedHeroTitle() {
   ];
 
   return (
-    <div ref={ref} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 md:gap-10">
+    <div ref={ref} className="flex flex-wrap items-center gap-1 sm:gap-4 md:gap-10">
       {words.map((word, wi) => (
         <span
           key={wi}

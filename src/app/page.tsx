@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       {/* What I Do (Gordon Management) — max-width constrained */}
-      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
+      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto pt-8 md:pt-16">
         <GordonManagementV2 />
       </div>
 
@@ -53,10 +53,8 @@ export default function Home() {
       </div>
       */}
 
-      {/* Newsletter — max-width constrained */}
-      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
-        <NewsletterV2 />
-      </div>
+      {/* Newsletter — full width */}
+      <NewsletterV2 />
 
       {/* Full-width Footer */}
       <FooterV2 />
