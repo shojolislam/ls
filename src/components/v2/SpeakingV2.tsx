@@ -404,7 +404,7 @@ export default function SpeakingV2() {
 
   return (
     <>
-      <section id="speaking" className="pb-24 md:pb-52 px-4 md:px-8 w-full scroll-mt-16">
+      <section id="speaking" className="pb-16 md:pb-32 px-4 md:px-8 w-full scroll-mt-16">
         {/* Header row: title + filter tabs */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-12 md:mb-20">
           <motion.h2
@@ -480,6 +480,29 @@ export default function SpeakingV2() {
               <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
+        </motion.div>
+
+        {/* Get in touch */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 mt-10 md:mt-14 pt-8 md:pt-10 border-t border-[var(--color-dark)]/10"
+        >
+          <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
+            Want me to speak to your organisation? Get in touch
+          </h3>
+          <a
+            href="mailto:lshaw@gordonmgmt.co.uk"
+            className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300 shrink-0"
+          >
+            <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+              <RollText text="Get in Touch" />
+            </span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+              <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </motion.div>
       </section>
 

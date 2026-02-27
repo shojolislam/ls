@@ -68,7 +68,7 @@ export default function HeroV2() {
         className="relative w-full h-[600px] sm:h-[650px] md:h-[700px] lg:h-[800px] rounded-2xl overflow-hidden"
       >
         <Image
-          src="/images/hero-library.jpg"
+          src="/images/hero-library-v2.jpg"
           alt="Lucy Shaw"
           fill
           className="object-cover object-top"
@@ -79,13 +79,13 @@ export default function HeroV2() {
 
         {/* Text overlay — positioned on top of the image */}
         <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-10 pb-8 md:pb-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between w-full">
+          <div className="flex flex-col w-full gap-8">
             <AnimatedHeroTitle />
             <motion.p
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-white/90 text-left md:text-right pb-2 mt-8 md:mt-0"
+              className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-white/90 text-left pb-2"
             >
               Energy expert: investor, writer, convenor, speaker
             </motion.p>

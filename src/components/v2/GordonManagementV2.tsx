@@ -78,7 +78,7 @@ export default function GordonManagementV2() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-            className="group grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-4 md:gap-8 py-8 md:py-10 px-4 md:px-6 -mx-4 md:-mx-6 border-t border-[var(--color-dark)]/10 last:border-b cursor-default transition-colors duration-300 hover:bg-[var(--color-dark)]/[0.04]"
+            className="group grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-4 md:gap-8 py-8 md:py-10 px-4 md:px-8 -mx-4 md:-mx-8 border-t border-[var(--color-dark)]/10 last:border-b cursor-default transition-colors duration-300 hover:bg-[var(--color-dark)]/[0.04]"
           >
             {/* Number + Title — stacked vertically */}
             <div className="flex flex-col gap-2 md:contents">
@@ -116,6 +116,30 @@ export default function GordonManagementV2() {
             <RollText text="Learn more" />
           </span>
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+            <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+      </motion.div>
+
+      {/* Get in touch CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 py-8 md:py-10 px-4 md:px-8 -mx-4 md:-mx-8 border-t border-[var(--color-dark)]/10"
+      >
+        <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
+          If you think I can help with your next project, get in touch
+        </h3>
+        <a
+          href="mailto:lshaw@gordonmgmt.co.uk"
+          className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300 shrink-0"
+        >
+          <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+            <RollText text="Get in Touch" />
+          </span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
             <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>

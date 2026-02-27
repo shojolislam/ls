@@ -45,7 +45,7 @@ const articles = [
 
 export default function WritingV2() {
   return (
-    <section className="py-24 md:py-52 px-4 md:px-8 w-full">
+    <section className="py-16 md:py-32 px-4 md:px-8 w-full">
       <div className="bg-white rounded-2xl overflow-hidden">
         {/* Header: matches Newsletter layout — text with padding, image edge-to-edge */}
         <div className="flex flex-col md:flex-row md:items-end">
@@ -73,11 +73,11 @@ export default function WritingV2() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full md:w-[320px] h-[300px] md:h-[420px] shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
+            className="w-full md:w-[320px] h-[300px] md:h-[360px] shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
           >
             <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
-                src="/images/writing-header.png"
+                src="/images/writing-header-new.jpg"
                 alt="Writing"
                 fill
                 className="object-cover"
@@ -142,6 +142,31 @@ export default function WritingV2() {
                 <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
+          </motion.div>
+
+          {/* Subscribe subsection */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 mt-8 md:mt-12 pt-8 md:pt-10 mx-2 md:mx-8 border-t border-[var(--color-dark)]/10"
+          >
+            <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
+              Subscribe to Slow Burn for regular updates
+            </h3>
+            <a
+              href="https://esgstuff.substack.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300 shrink-0"
+            >
+              <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+                <RollText text="Subscribe" />
+              </span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+                <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </motion.div>
         </div>
       </div>
